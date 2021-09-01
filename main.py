@@ -5,7 +5,6 @@ def print_help():
     print("""
 ___HELP:___
 Start   --> starts the game.
-Restart --> restarts the game.
 End     --> stops the game.
 
     """)
