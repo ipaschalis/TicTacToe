@@ -1,3 +1,5 @@
+from game_logic import Game
+
 
 def print_help():
     print("""
@@ -7,6 +9,7 @@ Restart --> restarts the game.
 End     --> stops the game.
 
     """)
+
 
 if __name__ == '__main__':
     print("""
@@ -21,7 +24,8 @@ Type 'help' for help.
     while True:
         cmd = input(">").lower()
         if cmd == "start":
-            pass
+            game = Game()
+            game.play_game()
         elif cmd == "end":
             break
         else:
