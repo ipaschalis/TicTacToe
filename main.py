@@ -15,7 +15,7 @@ if __name__ == '__main__':
     print("""
 Tic Tac Toe
 (c) Paschalis Ilias
-emain: ilias2002vip.gr@gmail.com
+email: ilias2002vip.gr@gmail.com
 
 Type 'start' to begin.
 Type 'help' for help.

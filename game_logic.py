@@ -1,7 +1,7 @@
 """
 Tic Tac Toe
 (c) Paschalis Ilias
-emain: ilias2002vip.gr@gmail.com"""
+email: ilias2002vip.gr@gmail.com"""
 
 
 class Game:
