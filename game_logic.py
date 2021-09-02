@@ -14,9 +14,55 @@ class Game:
         self.new_board = [["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"]]
         self.player_one = "x"
         self.player_two = "o"
+        self.moves_made = 0
+
+    # Getters:
 
     def get_board(self):
         return self.board
+
+    def get_player_playing(self):
+        return self.player_playing
+
+    def get_winner(self):
+        return self.winner
+
+    def get_coordinates(self):
+        return self.coordinates[:]
+
+    def get_new_board(self):
+        return self.new_board[:]
+
+    def get_player_one(self):
+        return self.player_one
+
+    def get_player_two(self):
+        return self.player_two
+
+    def get_moves_made(self):
+        return self.moves_made
+
+    # Setters:
+
+    def set_board(self, board):
+        self.board = board
+
+    def set_player_playing(self, player_playing):
+        self.player_playing = player_playing
+
+    def set_winner(self, winner):
+        self.winner = winner
+
+    def set_player_one(self, player_one):
+        self.player_one = self.player_one
+
+    def set_player_two(self, player_two):
+        self.player_two = player_two
+
+    def set_moves_made(self, moves_made):
+        self.moves_made =moves_made
+
+    # Game logic:
 
     def next_player(self):
         if self.player_playing == self.player_one:
@@ -68,8 +114,9 @@ class Game:
 
     def new_game(self):
         self.board = self.new_board[:]
-        self.player_playing = "x"
+        self.player_playing = self.player_one
         self.winner = "-"
+        self.moves_made = 0
 
     def play_game(self):
         self.new_game()
@@ -92,13 +139,20 @@ class Game:
             y = int(input(f"Give Y coordinate for player {self.player_playing}: "))
             if 0 <= x < 3 and 0 <= y < 3 and self.do_move(x, y):
                 self.check_for_win()
-                self.next_player()
+                if self.moves_made < 9:
+                    self.moves_made += 1
+                    self.next_player()
+                else:
+                    self.winner = "DRAW"
                 # print(f"the current winner is {self.winner}")
             else:
                 print("""
 INVALID MOVE!!!
 Try again!""")
-        print(f"The winner is: {self.winner.upper()}")
+        if self.winner != "DRAW":
+            print(f"The winner is: {self.winner.upper()}")
+        else:
+            print("Its a draw, better luck the next time!")
 
 
 if __name__ == '__main__':
