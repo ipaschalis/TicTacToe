@@ -12,13 +12,6 @@ ___
 * Score counter.
 * Ability for zeroing of the score counter.
 
-## About the source code:
-___
-
-Feel free to use parts of my code to make your own game, but if you do so I want you to credit me.
-
-The game logic is broken down to simple function, so that someone could call them in their own program or easily modify the way the game is played. Theoretically, someone could write a program that has many instances of the Game running simultaneously, maybe in a discord bot.
-
 ## How to interact with the class Game():
 ___
 ### __ init__()
